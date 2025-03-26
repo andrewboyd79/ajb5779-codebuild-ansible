@@ -15,4 +15,9 @@ phases:
       - chmod 400 ~/tmp/.ec2/ajb5779-codebuild-keypair.pem
       - ls -lah ~/tmp/.ec2
       - cat ~/tmp/.ec2/ajb5779-codebuild-keypair.txt
-     - cat ~/tmp/.ec2/ajb5779-codebuild-keypair.pem
+      - cat ~/tmp/.ec2/ajb5779-codebuild-keypair.pem
+
+  build:
+    commands:
+      ansible all -i inventory/hosts -m gather_facts
+      
