@@ -13,8 +13,6 @@ phases:
       - echo "$ANSIBLE_PRIVATE_KEY" > ~/.ec2/ajb5779-codebuild-keypair.pem
       - echo "$ANSIBLE_PRIVATE_KEY" > ~/.ec2/ajb5779-codebuild-keypair.txt
       - chmod 400 ~/.ec2/ajb5779-codebuild-keypair.pem
-      - chown ec2-user:ec2-user ~/.ec2/ajb5779-codebuild-keypair.pem
-      - chown ec2-user:ec2-user ~/.ec2/ajb5779-codebuild-keypair.txt
       - ls -lah ~/.ec2
       - cat ~/.ec2/ajb5779-codebuild-keypair.txt
   build:
