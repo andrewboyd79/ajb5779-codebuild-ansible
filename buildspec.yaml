@@ -11,10 +11,8 @@ phases:
       - pip install -r requirements.txt -q
       - mkdir -p ~/tmp/.ec2
       - echo "$ANSIBLE_PRIVATE_KEY" > ~/tmp/.ec2/ajb5779-codebuild-keypair.pem
-      - echo "$ANSIBLE_PRIVATE_KEY" > ~/tmp/.ec2/ajb5779-codebuild-keypair.txt
+      - echo "123" > ~/tmp/.ec2/ajb5779-codebuild-keypair.txt
       - chmod 400 ~/tmp/.ec2/ajb5779-codebuild-keypair.pem
       - ls -lah ~/tmp/.ec2
       - cat ~/tmp/.ec2/ajb5779-codebuild-keypair.txt
-  build:
-    commands:
-      - ansible all -i inventory/hosts -m gather_facts
+     - cat ~/tmp/.ec2/ajb5779-codebuild-keypair.pem
