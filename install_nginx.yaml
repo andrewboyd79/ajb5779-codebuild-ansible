@@ -13,8 +13,8 @@
         state: present
 
     - name: Start/reload NGINX
-          service:
-            name: nginx
-            state: restarted
-            enabled: true
+      service:
+        name: nginx
+        state: restarted
+        enabled: true
     
