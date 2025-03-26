@@ -9,13 +9,9 @@ phases:
       python: 3.13
     commands:
       - pip install -r requirements.txt -q
-      - mkdir -p ~/tmp/.ec2
-      - echo "$ANSIBLE_PRIVATE_KEY" > ~/tmp/.ec2/ajb5779-codebuild-keypair.pem
-      - echo "123" > ~/tmp/.ec2/ajb5779-codebuild-keypair.txt
-      - chmod 400 ~/tmp/.ec2/ajb5779-codebuild-keypair.pem
-      - ls -lah ~/tmp/.ec2
-      - cat ~/tmp/.ec2/ajb5779-codebuild-keypair.txt
-      - cat ~/tmp/.ec2/ajb5779-codebuild-keypair.pem
+      - mkdir -p ~/.ec2
+      - echo "$ANSIBLE_PRIVATE_KEY" > ~/.ec2/ajb5779-codebuild-keypair.pem
+      - chmod 400 ~/.ec2/ajb5779-codebuild-keypair.pem
 
   build:
     commands:
