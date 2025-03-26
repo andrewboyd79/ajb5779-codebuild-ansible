@@ -9,12 +9,12 @@ phases:
       python: 3.13
     commands:
       - pip install -r requirements.txt -q
-      - mkdir -p ~/.ec2
-      - echo "$ANSIBLE_PRIVATE_KEY" > ~/.ec2/ajb5779-codebuild-keypair.pem
-      - echo "$ANSIBLE_PRIVATE_KEY" > ~/.ec2/ajb5779-codebuild-keypair.txt
-      - chmod 400 ~/.ec2/ajb5779-codebuild-keypair.pem
-      - ls -lah ~/.ec2
-      - cat ~/.ec2/ajb5779-codebuild-keypair.txt
+      - mkdir -p ~/tmp/.ec2
+      - echo "$ANSIBLE_PRIVATE_KEY" > ~/tmp/.ec2/ajb5779-codebuild-keypair.pem
+      - echo "$ANSIBLE_PRIVATE_KEY" > ~/tmp/.ec2/ajb5779-codebuild-keypair.txt
+      - chmod 400 ~/tmp/.ec2/ajb5779-codebuild-keypair.pem
+      - ls -lah ~/tmp/.ec2
+      - cat ~/tmp/.ec2/ajb5779-codebuild-keypair.txt
   build:
     commands:
       - ansible all -i inventory/hosts -m gather_facts
