@@ -1,0 +1,29 @@
+---
+- name: Instance preparation
+  hosts: all
+  become: true
+  gather_facts: true
+  pre_tasks:
+    - name: dnf upgrade (latest)
+      ansible.builtin.shell: 
+        cmd: "sudo dnf upgrade --releasever=latest -y"
+      register: dnf_results
+
+    - name: Print Results
+      debug:
+        msg: "{{ dnf_results.stdout_lines }}"
+
+    - name: Unconditionally reboot the machine with all defaults
+      ansible.builtin.reboot:
+
+  tasks:
+    - name: dnf cache update
+      dnf:
+        update_cache: yes
+
+    - name: install pip3
+      dnf:
+        name: python3-pip
+        state: latest
+        
+    
