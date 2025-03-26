@@ -15,5 +15,5 @@ phases:
 
   build:
     commands:
-      ansible all -i inventory/hosts -m gather_facts
+      ansible-playbook -i inventory/hosts install_nginx.yaml
       
