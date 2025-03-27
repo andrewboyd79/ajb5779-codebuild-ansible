@@ -15,5 +15,6 @@ phases:
 
   build:
     commands:
-      - ansible-inventory -i inventory/aws_ec2.yaml --list
+      - ansible-playbook -i inventory/hosts prepare_instance.yaml 
+      - ansible-playbook -i inventory/hosts install_nginx.yaml
       
