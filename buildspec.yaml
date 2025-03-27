@@ -15,5 +15,5 @@ phases:
 
   build:
     commands:
-      - ansible-inventory -i inventory/aws_ec2.yaml --list
+      - ansible-inventory -i inventory/aws_ec2.yaml --graph
       
