@@ -1,6 +1,6 @@
 ---
 - name: Instance preparation
-  hosts: all
+  hosts: tag_Group_Webservers
   become: true
   gather_facts: true
   pre_tasks:
